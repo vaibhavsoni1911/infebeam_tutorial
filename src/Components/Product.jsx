@@ -72,11 +72,15 @@ export default class Product extends Component {
 					let filteredProd = this.state.selectedRam.length
 						? data.products.filter(
 								(product) =>
+									this.state.selectedRam.includes(product.RAM.substr(0, 3)) ||
 									this.state.selectedRam.includes(product.RAM.substr(0, 4)) ||
 									this.state.selectedRam.includes(product.RAM.substr(0, 5))
 						  )
 						: data.products;
-					if (this.state.storageCapacity) {
+					if (
+						this.state.storageCapacity &&
+						parseInt(this.state.storageCapacity)
+					) {
 						filteredProd = filteredProd.filter((prod) =>
 							prod.HDD.includes(this.state.storageCapacity)
 						);
