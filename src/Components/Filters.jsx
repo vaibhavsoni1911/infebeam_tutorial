@@ -126,7 +126,8 @@ export default class Filters extends Component {
 									!this.props.storageCapacity &&
 									!this.props.selectedRam.length &&
 									!this.props.hdd &&
-									!this.props.storageCapacity
+									!this.props.storageCapacity &&
+									!this.props.location
 								}
 							>
 								Get Products
